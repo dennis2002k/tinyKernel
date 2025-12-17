@@ -1,6 +1,7 @@
 # Tiny x86 Kernel (C + Assembly) 
 
-A hobby operating system kernel written in **C and x86 assembly**, built from scratch and booted using **GRUB (Multiboot)**.  
+A hobby operating system kernel written in **C and x86 assembly**, built from scratch and booted using **GRUB (Multiboot)**. 
+ 
 Runs in **QEMU** and **Bochs**.
 
 This project focuses on low-level OS concepts including memory management, paging, interrupts, and hardware drivers.
