@@ -5,7 +5,7 @@ Runs in **QEMU** and **Bochs**.
 
 This project focuses on low-level OS concepts including memory management, paging, interrupts, and hardware drivers.
 
-
+---
 
 ## Features
 
@@ -21,7 +21,7 @@ This project focuses on low-level OS concepts including memory management, pagin
 - Virtual memory with paging
 - Kernel heap (`kmalloc`)
 
-
+---
 
 ## Memory Management
 
@@ -31,7 +31,7 @@ This project focuses on low-level OS concepts including memory management, pagin
 - Recursive paging for page table access
 - Dynamic kernel heap allocation
 
-
+---
 
 ### Build and run
 
@@ -56,7 +56,7 @@ If `grub-mkrescue` fails due to missing xorriso, install `xorriso`:
 sudo apt install xorriso
 ```
 
-
+---
 
 # Build 
 
@@ -74,6 +74,7 @@ qemu-system-i386 -cdrom tiny.iso
 bochs -f bochs
 ```
 
+---
 
 ### Notes
 - Tested compilation under Linux (WSL or native), but kernel runs in QEMU/Bochs on any platform.
