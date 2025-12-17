@@ -33,9 +33,9 @@ This project focuses on low-level OS concepts including memory management, pagin
 
 ---
 
-### Build and run
+## Build and run
 
-## Requirements
+### Requirements
 - `gcc` with multilib support (for `-m32`)
 - `nasm`
 - `binutils` (ld)
@@ -49,7 +49,7 @@ On Debian/Ubuntu you can install:
 ```bash
 sudo apt install build-essential gcc-multilib binutils-multiarch grub-common grub-pc-bin qemu-system-x86
 ```
-# Notes
+## Notes
 If `grub-mkrescue` fails due to missing xorriso, install `xorriso`:
 
 ```bash
@@ -58,18 +58,18 @@ sudo apt install xorriso
 
 ---
 
-# Build 
+## Build 
 
 ```bash
 make # this produces the iso
 ```
 
-# Run Qemu
+## Run Qemu
 ```bash
 qemu-system-i386 -cdrom tiny.iso
 ```
 
-# Run bochs 
+## Run bochs 
 ```bash
 bochs -f bochs
 ```
