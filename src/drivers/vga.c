@@ -52,7 +52,7 @@ void putc(char c) {
             if (cursor_row >= SCREEN_HEIGHT) {
                 cursor_scroll();
             }
-            // update_cursor();
+            update_cursor();
             return;
         case '\b':
             backSpace();

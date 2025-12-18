@@ -24,7 +24,7 @@ void pmm_init(uint32_t memLow, uint32_t memHigh, struct multiboot_info *mbd) {
         struct multiboot_mmap_entry *entry = (struct multiboot_mmap_entry*)(mbd->mmap_addr + i);
 
         // printf("StartLow: %x, StartHigh: %x, LengthLow: %x, Lengthhigh: %x, Type: %x\n", entries[i].addr_low, entries[i].addr_high, entries[i].len_low, entries[i].len_high, entries[i].type);
-        printf("StartLow: %x, StartHigh: %x, LengthLow: %x, LengthHigh: %x, Type: %x\n", entry->addr_low, entry->addr_high, entry->len_low, entry->len_high, entry->type);
+        // printf("StartLow: %x, StartHigh: %x, LengthLow: %x, LengthHigh: %x, Type: %x\n", entry->addr_low, entry->addr_high, entry->len_low, entry->len_high, entry->type);
         
 
         uint64_t base_addr = ((uint64_t)entry->addr_high << 32) | entry->addr_low;
@@ -59,7 +59,7 @@ void pmm_init(uint32_t memLow, uint32_t memHigh, struct multiboot_info *mbd) {
     }
 
     // mark kernel memory as used
-    printf("Kernel end address %x\n", ((uint32_t)&_kernel_end - KERNEL_START));
+    // printf("Kernel end address %x\n", ((uint32_t)&_kernel_end - KERNEL_START));
     uint32_t kernel_end_physical = (uint32_t)&_kernel_end - KERNEL_START;
     uint32_t start_page = KERNEL_START / 4096;
     uint32_t end_page =  kernel_end_physical / 4096;
@@ -177,10 +177,10 @@ void *kmalloc_page() {
 
 void initMemory(uint32_t memHigh, uint32_t physicalAddressStart, struct multiboot_info *mbd) {
    
-    printf("Upper Memory: %x\n", mbd->mem_upper);
-    printf("Lower Memory: %x\n", mbd->mem_lower);
-    printf("mmapAddr Memory: %x\n", mbd->mmap_addr);
-    printf("Initial_Page_Dir: %x\n", initial_page_dir[0]);
+    // printf("Upper Memory: %x\n", mbd->mem_upper);
+    // printf("Lower Memory: %x\n", mbd->mem_lower);
+    // printf("mmapAddr Memory: %x\n", mbd->mmap_addr);
+    // printf("Initial_Page_Dir: %x\n", initial_page_dir[0]);
     // initial_page_dir[0] = 0;
     // invalidate(0);
     initial_page_dir[1023] = ((uint32_t) initial_page_dir - KERNEL_START) | PAGE_FLAG_PRESENT | PAGE_FLAG_WRITE;
